@@ -1,6 +1,19 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+
+  for (i = 0; i < array.length; i++) { 
+    let remaining = target - array[i];
+
+    for (j = 1 + i; j < array.length; i++) {
+
+      if (array[j] === remaining) return true;
+    };
+    
+    // let total = array[i] + array[j];
+
+  };
+  return false;
+};
 
 /* 
   Write the Big O time complexity of your function here
@@ -8,10 +21,39 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+
+
+        WRONG!!!!
+
+  for (i = 0; i < array.length(); i++) { 
+    let j = array.length - 1 - i;
+    let total = array[i] + array[j];
+    return total === target;
+    };
+  };
+
+
+      CORRECT!!!!
+
+      for (i = 0; i < array.length; i++) {
+
+        let sum = target - array[i];
+
+        for (j = 1 + i; j < array.length; i++) {
+
+          if (sum === array[j]) return true;
+        }
+      }
+
 */
 
 /*
   Add written explanation of your solution here
+
+    create a loop that starts at beginning of loop and end of loop
+  then add each one together moving in the array
+
+
 */
 
 // You can run `node index.js` to view these console logs
